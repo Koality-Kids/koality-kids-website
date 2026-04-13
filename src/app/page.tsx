@@ -8,7 +8,6 @@ import {
   Rocket,
   Check,
   Users,
-  Smartphone,
   ArrowRight,
   Mail,
   Building2,
@@ -187,8 +186,6 @@ export default function Home() {
                 "Basic species identification",
                 "Personal observation journal",
               ]}
-              ctaText="Download Free"
-              ctaStyle="outline"
             />
             {/* Pro */}
             <PricingCard
@@ -207,8 +204,6 @@ export default function Home() {
                 "Audio nature guides",
                 "Weekly nature challenges",
               ]}
-              ctaText="Start Pro Trial"
-              ctaStyle="gradient"
               highlighted
             />
             {/* Elite */}
@@ -228,8 +223,6 @@ export default function Home() {
                 "Exclusive badges & rewards",
                 "Early access to new features",
               ]}
-              ctaText="Start Elite Trial"
-              ctaStyle="outline"
             />
             {/* Enterprise */}
             <PricingCard
@@ -246,9 +239,6 @@ export default function Home() {
                 "Custom integrations",
                 "SLA & priority support",
               ]}
-              ctaText="Contact Us"
-              ctaStyle="outline"
-              ctaHref="mailto:hello@koalitytech.com"
             />
           </div>
         </div>
@@ -375,9 +365,6 @@ function PricingCard({
   badgeColor,
   description,
   features,
-  ctaText,
-  ctaStyle,
-  ctaHref,
   highlighted,
 }: {
   icon: React.ReactNode;
@@ -389,9 +376,6 @@ function PricingCard({
   badgeColor?: string;
   description: string;
   features: string[];
-  ctaText: string;
-  ctaStyle: "gradient" | "outline";
-  ctaHref?: string;
   highlighted?: boolean;
 }) {
   return (
