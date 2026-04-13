@@ -86,44 +86,47 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-text-primary">
               Fuelling Curious Young Minds
             </h2>
+            <p className="text-text-secondary mt-4 max-w-2xl mx-auto leading-relaxed">
+              We live in a busy world where children&apos;s curiosities often go unanswered, and passive screen time is linked to real developmental challenges. KoalityKids is built around active learning and hands-on exploration — helping kids discover the world around them in ways that promote healthy development, body and mind.
+            </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Feature cards */}
             <FeatureCard
               icon={<Camera size={24} className="text-purple" />}
               iconBg="bg-lavender"
-              title="Snap & Identify"
-              description="Point your camera at any plant, animal, or insect. Our smart identification tells you exactly what you've found, with fun facts included."
+              title="See It, Know It"
+              description="Point your camera at anything that sparks curiosity and let our child-safe AI explain what it is — complete with fun facts kids will love."
             />
             <FeatureCard
               icon={<Eye size={24} className="text-teal" />}
               iconBg="bg-[#E0F7FA]"
-              title="Observation Journal"
-              description="Every discovery is saved to your personal journal. Track where and when you spotted each species, and watch your collection grow."
+              title="Keep a Treasure Chest"
+              description="Every discovery is saved to a personal journal. Track what you found, where, and when — and watch your collection grow over time."
             />
             <FeatureCard
               icon={<Trophy size={24} className="text-success-green" />}
               iconBg="bg-[#E8F5E9]"
-              title="Badges & Achievements"
+              title="Get Rewards"
               description="Earn badges for streaks, rare finds, and milestones. Stay motivated with weekly nature challenges and seasonal events."
             />
             <FeatureCard
               icon={<Users size={24} className="text-teal" />}
               iconBg="bg-[#E0F7FA]"
-              title="Community Feed"
+              title="Share With Your Friends"
               description="See what other explorers have discovered nearby. Share your best finds and inspire friends and family to get outside."
+            />
+            <FeatureCard
+              icon={<Rocket size={24} className="text-pink" />}
+              iconBg="bg-[#FCE4EC]"
+              title="Join Challenges"
+              description="Take part in curated learning challenges designed to spark new interests, build knowledge, and keep kids engaged on their goals."
             />
             <FeatureCard
               icon={<Shield size={24} className="text-purple" />}
               iconBg="bg-lavender"
-              title="Parent Portal"
-              description="A dedicated parental area to manage settings, review activity, and control subscriptions — protected by a parental code."
-            />
-            <FeatureCard
-              icon={<Smartphone size={24} className="text-pink" />}
-              iconBg="bg-[#FCE4EC]"
-              title="Works Offline"
-              description="No signal? No problem. Capture observations anywhere, and they'll sync automatically when you're back online."
+              title="Peace of Mind for Parents"
+              description="See exactly what your child is exploring, set boundaries, and manage everything from a dedicated parental area — all protected by a secure code."
             />
           </div>
         </div>
@@ -245,7 +248,7 @@ export default function Home() {
               ]}
               ctaText="Contact Us"
               ctaStyle="outline"
-              ctaHref="mailto:hello@koalitykids.com.au"
+              ctaHref="mailto:hello@koalitytech.com"
             />
           </div>
         </div>
@@ -294,13 +297,13 @@ export default function Home() {
                 Koality<span className="gradient-text">Kids</span>
               </span>
               <p className="text-sm text-text-secondary mt-1">
-                Explore nature, one discovery at a time.
+                Improving the world, one child at a time.
               </p>
             </div>
             <div className="flex items-center gap-6">
-              <a href="mailto:hello@koalitykids.com.au" className="text-sm text-text-secondary hover:text-text-primary transition-colors flex items-center gap-2">
+              <a href="mailto:hello@koalitytech.com" className="text-sm text-text-secondary hover:text-text-primary transition-colors flex items-center gap-2">
                 <Mail size={14} />
-                hello@koalitykids.com.au
+                hello@koalitytech.com
               </a>
             </div>
           </div>
@@ -309,8 +312,8 @@ export default function Home() {
               &copy; {new Date().getFullYear()} Koality Pty Ltd. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
-              <a href="#" className="text-xs text-text-secondary hover:text-text-primary transition-colors">Privacy Policy</a>
-              <a href="#" className="text-xs text-text-secondary hover:text-text-primary transition-colors">Terms of Service</a>
+              <a href="/privacy" className="text-xs text-text-secondary hover:text-text-primary transition-colors">Privacy Policy</a>
+              <a href="/contact" className="text-xs text-text-secondary hover:text-text-primary transition-colors">Contact</a>
             </div>
           </div>
         </div>
@@ -417,7 +420,7 @@ function PricingCard({
         {subtitle && <span className="text-sm text-text-secondary">{subtitle}</span>}
       </div>
       <p className="text-sm text-text-secondary mb-5">{description}</p>
-      <ul className="space-y-2.5 mb-6">
+      <ul className="space-y-2.5">
         {features.map((f, i) => (
           <li key={i} className="flex items-start gap-2 text-sm text-text-primary">
             <Check size={16} className="text-success-green mt-0.5 flex-shrink-0" />
@@ -425,21 +428,6 @@ function PricingCard({
           </li>
         ))}
       </ul>
-      {ctaStyle === "gradient" ? (
-        <a
-          href={ctaHref || "#download"}
-          className="block text-center gradient-bg hover:gradient-bg-hover text-white font-medium py-3 rounded-pill transition-all"
-        >
-          {ctaText}
-        </a>
-      ) : (
-        <a
-          href={ctaHref || "#download"}
-          className="block text-center border-2 border-black/10 hover:border-black/20 text-text-primary font-medium py-3 rounded-pill transition-all"
-        >
-          {ctaText}
-        </a>
-      )}
     </div>
   );
 }
