@@ -1,10 +1,17 @@
-import axios from "axios";
+import axios, { isAxiosError } from "axios";
 
 type RequestType = {
   subject: string;
   category: string;
   description: string;
 };
+
+export interface ErrorResponse<T> {
+  success: boolean;
+  message: string;
+  data: T;
+  metadata: any;
+}
 
 export async function POST(request: Request) {
   const body: RequestType = await request.json();
@@ -74,5 +81,23 @@ export async function POST(request: Request) {
     return Response.json({
       message: "Message sent successfully. We will be contacting you soon!",
     });
-  } catch (err) {}
+  } catch (err) {
+    if (isAxiosError<ErrorResponse<any>>(err)) {
+      return Response.json(
+        {
+          message:
+            err.response?.data.message ||
+            "An unknown error occurred. Please try again later.",
+        },
+        { status: 400 },
+      );
+    } else {
+      return Response.json(
+        {
+          message: "An unknown error occurred. Please try again later.",
+        },
+        { status: 400 },
+      );
+    }
+  }
 }
